@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "teamsAppId": "GENERATE-A-NEW-GUID-AND-PASTE-IT-HERE",
+  "botClientId": "CLIENT-ID-OF-THE-BOT-APP-REGISTRATION",
+  "developerName": "Imperial Learning Ltd",
+  "websiteUrl": "https://YOUR-COMPANY-WEBSITE",
+  "privacyUrl": "https://YOUR-COMPANY-WEBSITE/privacy",
+  "termsOfUseUrl": "https://YOUR-COMPANY-WEBSITE/terms",
+  "shortName": "Claude Meeting Assistant",
+  "fullName": "Claude Meeting Assistant for Imperial Learning Ltd"
+}

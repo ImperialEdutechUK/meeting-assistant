@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.25",
+  "version": "{{version}}",
+  "id": "{{teamsAppId}}",
+  "developer": {
+    "name": "{{developerName}}",
+    "websiteUrl": "{{websiteUrl}}",
+    "privacyUrl": "{{privacyUrl}}",
+    "termsOfUseUrl": "{{termsOfUseUrl}}"
+  },
+  "name": {
+    "short": "{{shortName}}",
+    "full": "{{fullName}}"
+  },
+  "description": {
+    "short": "Joins your Teams meetings, answers questions aloud and writes the recap.",
+    "full": "An AI meeting assistant for staff. Mention it in a meeting chat and type join, or paste a meeting link in a personal chat, and it joins the call. It follows the meeting through live captions, answers when someone says its name, answers questions in chat, and posts a recap with decisions, actions and who explained what when the meeting ends. Afterwards, attendees can ask it about the meeting in a personal chat. It keeps transcripts for a limited period set by your administrator and does not record audio or video. Answers are written by AI and should be checked before relying on them."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#223A5E",
+  "bots": [
+    {
+      "botId": "{{botClientId}}",
+      "scopes": ["personal", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["groupChat"],
+          "commands": [
+            { "title": "join", "description": "Join this meeting and start following it" },
+            { "title": "recap", "description": "Recap the meeting so far" },
+            { "title": "leave", "description": "Leave the meeting and post the recap" },
+            { "title": "help", "description": "What the assistant can do" }
+          ]
+        },
+        {
+          "scopes": ["personal"],
+          "commands": [
+            { "title": "help", "description": "What the assistant can do" },
+            { "title": "recap", "description": "Recap of the last meeting you invited me to" },
+            { "title": "leave", "description": "Leave the meeting you invited me to" },
+            { "title": "status", "description": "Meetings in progress and estimated spend this month" }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [],
+  "webApplicationInfo": {
+    "id": "{{botClientId}}",
+    "resource": "api://botid-{{botClientId}}"
+  },
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        { "name": "OnlineMeeting.ReadBasic.Chat", "type": "Application" }
+      ]
+    }
+  },
+  "defaultInstallScope": "personal",
+  "defaultGroupCapability": {
+    "groupchat": "bot",
+    "meetings": "bot"
+  }
+}

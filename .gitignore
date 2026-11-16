@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+secrets/
+teams-app/build/
+teams-app/app.config.json
+knowledge/
+*.log
+__azurite*
+__blobstorage__/
